@@ -1,0 +1,9 @@
+{
+  "//": "Silences type-checker noise on the stubs and dynamic Managed Agents event objects so it doesn't distract during the workshop.",
+  "reportAttributeAccessIssue": false,
+  "reportCallIssue": false,
+  "reportArgumentType": false,
+  "reportOptionalMemberAccess": false,
+  "reportIndexIssue": false,
+  "reportReturnType": false
+}

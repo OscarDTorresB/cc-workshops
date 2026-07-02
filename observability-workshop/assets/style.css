@@ -1,0 +1,136 @@
+/* ===================================================================
+   Trace the Incident — incident console styling (dark)
+   -------------------------------------------------------------------
+   app.py injects this file wrapped in a style tag (see load_css in app.py).
+   Everything is token-driven and grouped so it's easy to read and tweak.
+   =================================================================== */
+
+/* --- Design tokens: change the palette in one place ---------------- */
+:root {
+  --bg:        #0b0f17;  /* page canvas (matches config background)     */
+  --panel:     #141b26;  /* cards / sidebar / inputs                    */
+  --panel-2:   #1b2432;  /* raised surface, hovers, table headers       */
+  --border:    #263041;  /* hairline borders                            */
+  --text:      #e6edf3;  /* primary text                                */
+  --muted:     #8b98a9;  /* secondary / captions                        */
+  --primary:   #4c9dff;  /* signal blue — interactive accent            */
+  --primary-weak:   rgba(76, 157, 255, 0.14);
+  --primary-border: rgba(76, 157, 255, 0.45);
+  --critical:  #f87171;  /* 5xx / ERROR / incident                      */
+  --warn:      #fbbf24;  /* WARN / degraded                             */
+  --ok:        #34d399;  /* healthy / succeeded                         */
+}
+
+/* --- App chrome: quieter Streamlit shell --------------------------- */
+header[data-testid="stHeader"] { background: transparent; }
+.block-container { padding-top: 2.4rem; padding-bottom: 5rem; max-width: 1080px; }
+
+/* Custom scrollbars so the dark theme feels finished. */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--panel-2); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* =================================================================== */
+/*  SIDEBAR — brand, live status, navigation, session controls         */
+/* =================================================================== */
+section[data-testid="stSidebar"] { border-right: 1px solid var(--border); }
+section[data-testid="stSidebar"] > div { padding-top: 1.4rem; }
+
+/* Brand block */
+.brand { display: flex; align-items: center; gap: 12px; padding: 2px 4px 14px; }
+.brand__logo { font-size: 26px; line-height: 1; }
+.brand__title { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: .2px; }
+.brand__subtitle { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.6px; margin-top: 1px; }
+
+/* Live status chip */
+.status-chip {
+  display: flex; align-items: center; gap: 9px;
+  padding: 10px 12px; margin: 2px 0 18px;
+  border-radius: 10px; font-size: 13px; font-weight: 600; color: var(--text);
+  background: rgba(248, 113, 113, .10); border: 1px solid rgba(248, 113, 113, .35);
+}
+.status-chip small { display: block; font-weight: 500; color: var(--muted); font-size: 11.5px; }
+.status-chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--critical); flex: 0 0 auto; animation: pulse 1.6s infinite; }
+.status-chip.ok { background: rgba(52, 211, 153, .10); border-color: rgba(52, 211, 153, .35); }
+.status-chip.ok .dot { background: var(--ok); animation: none; }
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(248, 113, 113, .45); }
+  70%  { box-shadow: 0 0 0 7px rgba(248, 113, 113, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(248, 113, 113, 0); }
+}
+
+/* Little section labels in the sidebar */
+.nav-label { font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+             color: var(--muted); margin: 8px 4px 6px; }
+
+/* Sidebar nav = full-width, left-aligned buttons. The active item is a
+   Streamlit "primary" button, which we tint with the accent. */
+section[data-testid="stSidebar"] .stButton > button {
+  justify-content: flex-start; text-align: left;
+  border: 1px solid transparent; background: transparent; color: var(--muted);
+  font-weight: 600; border-radius: 10px; padding: 9px 12px; margin: 1px 0;
+}
+section[data-testid="stSidebar"] .stButton > button:hover {
+  background: var(--panel-2); color: var(--text); border-color: var(--border);
+}
+section[data-testid="stSidebar"] .stButton > button[kind="primary"],
+section[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] {
+  background: var(--primary-weak); color: var(--primary); border-color: var(--primary-border);
+}
+
+/* =================================================================== */
+/*  MAIN CONTENT                                                       */
+/* =================================================================== */
+
+/* Page header: title + one-line description at the top of each view. */
+.page-head { margin: 0 0 22px; }
+.page-head h1 { font-size: 26px; font-weight: 700; color: var(--text); margin: 0; letter-spacing: .2px; }
+.page-head p { color: var(--muted); font-size: 14px; margin: 6px 0 0; max-width: 70ch; }
+
+/* Metric cards — turn plain st.metric into bordered stat tiles. */
+[data-testid="stMetric"] { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+[data-testid="stMetricLabel"] p { color: var(--muted); font-weight: 600; }
+[data-testid="stMetricValue"] { font-weight: 700; }
+
+/* Severity badges (inline pills). */
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+         letter-spacing: .3px; border: 1px solid transparent; white-space: nowrap; }
+.badge--critical { color: var(--critical); background: rgba(248, 113, 113, .12); border-color: rgba(248, 113, 113, .35); }
+.badge--warn { color: var(--warn); background: rgba(251, 191, 36, .12); border-color: rgba(251, 191, 36, .35); }
+.badge--ok { color: var(--ok); background: rgba(52, 211, 153, .12); border-color: rgba(52, 211, 153, .35); }
+
+/* Table color-key legend. */
+.legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 2px 0 12px; font-size: 12.5px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+/* Buttons (main area). */
+.stButton > button { border-radius: 10px; border: 1px solid var(--border); font-weight: 600;
+                     transition: border-color .15s ease, color .15s ease, background .15s ease; }
+.stButton > button:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Inputs, selects, sliders — consistent rounded surfaces. */
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+[data-testid="stTextInput"] input {
+  background: var(--panel); border-radius: 10px; border-color: var(--border);
+}
+
+/* Data tables. */
+[data-testid="stDataFrame"], [data-testid="stTable"] { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+[data-testid="stTable"] thead th { background: var(--panel-2); color: var(--muted); }
+
+/* Expanders (raw log, tool trace). */
+[data-testid="stExpander"], details { border: 1px solid var(--border) !important; border-radius: 12px !important; background: var(--panel); overflow: hidden; }
+
+/* --- Chat panel ---------------------------------------------------- */
+[data-testid="stChatMessage"] { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 8px 14px; margin-bottom: 10px; }
+[data-testid="stChatInput"] { border-radius: 12px; border: 1px solid var(--border); background: var(--panel); }
+
+/* Empty state card (e.g. "no session open yet"). */
+.empty { border: 1px dashed var(--border); border-radius: 16px; padding: 44px 28px; text-align: center;
+         color: var(--muted); background: var(--panel); }
+.empty b { color: var(--text); }
+
+/* Small inline status line (agent / env / session ids). */
+.meta-line { color: var(--muted); font-size: 12.5px; margin: 2px 0 14px; }
+.meta-line code { color: var(--primary); }

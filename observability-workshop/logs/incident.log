@@ -1,0 +1,91 @@
+2026-07-02T14:00:05Z INFO  api-gateway      request_id=g-4901 GET /healthz 200 2ms
+2026-07-02T14:00:12Z INFO  inventory-service request_id=i-2001 GET /stock/912 200 19ms
+2026-07-02T14:01:03Z INFO  cdn-edge         request_id=c-7701 GET /assets/app.js 304 3ms
+2026-07-02T14:01:47Z INFO  recommendations  request_id=re-3301 GET /reco/home 200 61ms
+2026-07-02T14:02:30Z WARN  analytics-ingest request_id=an-9001 POST /ingest 200 118ms batch_lag=1200ms backpressure
+2026-07-02T14:03:19Z INFO  auth-service     request_id=au-5501 POST /login 200 73ms
+2026-07-02T14:03:58Z INFO  notifications-service request_id=n-6601 POST /notify/email 200 44ms
+2026-07-02T14:04:41Z INFO  cron-runner      request_id=cr-0101 tick job=session-sweep 200 8ms
+2026-07-02T14:05:22Z INFO  shipping-service request_id=sh-4401 GET /rates?zip=94107 200 57ms
+2026-07-02T14:06:10Z INFO  cdn-edge         request_id=c-7705 GET /assets/main.css 304 2ms
+2026-07-02T14:06:59Z INFO  pricing-service  request_id=p-8801 GET /price/912 200 27ms
+2026-07-02T14:07:33Z INFO  inventory-service request_id=i-2011 GET /stock/415 200 22ms
+2026-07-02T14:08:14Z WARN  web-frontend     request_id=w-4390 GET /product/912 200 812ms slow_render
+2026-07-02T14:08:51Z INFO  search-service   request_id=s-1a70 GET /search?q=boots 200 79ms
+2026-07-02T14:09:40Z INFO  user-profile     request_id=u-3301 GET /profile/me 200 33ms
+2026-07-02T14:10:05Z INFO  api-gateway      request_id=g-4930 GET /healthz 200 2ms
+2026-07-02T14:10:52Z INFO  email-worker     request_id=ew-1201 job=welcome-email sent 200 15ms
+2026-07-02T14:11:29Z INFO  feature-flags    request_id=f-1201 GET /flags 200 6ms
+2026-07-02T14:12:18Z INFO  fraud-detection  request_id=fr-9901 POST /score 200 41ms
+2026-07-02T14:13:03Z WARN  analytics-ingest request_id=an-9012 POST /ingest 200 96ms gc_pause=210ms
+2026-07-02T14:13:47Z INFO  recommendations  request_id=re-3312 GET /reco/pdp 200 58ms
+2026-07-02T14:14:35Z INFO  checkout         request_id=r-8ef0 GET /cart/summary 200 31ms
+2026-07-02T14:15:11Z INFO  cdn-edge         request_id=c-7720 GET /assets/logo.svg 200 4ms
+2026-07-02T14:16:00Z INFO  search-indexer   request_id=si-2001 job=incremental-index docs=1204 200 340ms
+2026-07-02T14:16:44Z INFO  shipping-service request_id=sh-4410 GET /rates?zip=10001 200 61ms
+2026-07-02T14:17:20Z INFO  inventory-service request_id=i-2020 GET /stock/912 200 20ms
+2026-07-02T14:17:59Z WARN  api-gateway      request_id=g-5010 GET /v1/orders 200 640ms slow_backend
+2026-07-02T14:18:38Z INFO  notifications-service request_id=n-6620 POST /notify/push 200 39ms
+2026-07-02T14:19:12Z INFO  web-frontend     request_id=w-4405 GET /category/shoes 200 14ms
+2026-07-02T14:19:50Z INFO  auth-service     request_id=au-5520 POST /token/refresh 200 22ms
+2026-07-02T14:20:03Z INFO  checkout        request_id=r-8f01 GET /cart/summary 200 34ms
+2026-07-02T14:20:31Z INFO  pricing-service  request_id=p-8820 GET /price/415 200 25ms
+2026-07-02T14:20:58Z INFO  cdn-edge         request_id=c-7740 GET /assets/app.js 304 3ms
+2026-07-02T14:21:11Z INFO  checkout        request_id=r-8f02 POST /cart/add 200 41ms
+2026-07-02T14:21:39Z INFO  recommendations  request_id=re-3330 GET /reco/home 200 60ms
+2026-07-02T14:22:05Z INFO  api-gateway      request_id=g-5041 GET /healthz 200 2ms
+2026-07-02T14:22:47Z INFO  search-service  request_id=s-1a90 GET /search?q=shoes 200 88ms
+2026-07-02T14:23:02Z INFO  inventory-service request_id=i-2033 GET /stock/311 200 18ms
+2026-07-02T14:23:05Z INFO  checkout        request_id=r-8f05 POST /checkout/begin 200 52ms
+2026-07-02T14:23:44Z WARN  email-worker     request_id=ew-1220 job=digest queue_depth=3200 backpressure
+2026-07-02T14:24:10Z INFO  user-profile     request_id=u-3320 GET /profile/settings 200 29ms
+2026-07-02T14:24:39Z INFO  web-frontend    request_id=w-4410 GET /home 200 12ms
+2026-07-02T14:25:07Z INFO  notifications-service request_id=n-6640 POST /notify/email 200 47ms
+2026-07-02T14:25:33Z INFO  cdn-edge         request_id=c-7760 GET /assets/main.css 304 2ms
+2026-07-02T14:25:58Z INFO  checkout        request_id=r-8f09 POST /checkout/begin 200 49ms
+2026-07-02T14:26:22Z INFO  search-service   request_id=s-1ab5 GET /search?q=coat 200 83ms
+2026-07-02T14:26:50Z INFO  cron-runner      request_id=cr-0120 tick job=metrics-flush 200 6ms
+2026-07-02T14:27:14Z INFO  checkout        request_id=r-8f0d POST /payment/authorize 200 118ms upstream=payments-service
+2026-07-02T14:27:41Z INFO  shipping-service request_id=sh-4430 GET /rates?zip=60601 200 55ms
+2026-07-02T14:28:09Z WARN  analytics-ingest request_id=an-9030 POST /ingest 200 88ms gc_pause=180ms
+2026-07-02T14:28:40Z INFO  search-service  request_id=s-1aa3 GET /search?q=jacket 200 76ms
+2026-07-02T14:28:58Z INFO  api-gateway      request_id=g-5080 GET /healthz 200 2ms
+2026-07-02T14:29:02Z INFO  checkout        request_id=r-8f11 POST /payment/authorize 200 121ms upstream=payments-service
+2026-07-02T14:29:33Z INFO  feature-flags    request_id=f-1230 GET /flags 200 5ms
+2026-07-02T14:29:59Z INFO  recommendations  request_id=re-3345 GET /reco/cart 200 62ms
+2026-07-02T14:30:20Z INFO  cdn-edge         request_id=c-7780 GET /assets/vendor.js 304 3ms
+2026-07-02T14:30:55Z INFO  checkout        request_id=r-8f15 POST /payment/authorize 200 133ms upstream=payments-service
+2026-07-02T14:31:15Z INFO  inventory-service request_id=i-2050 GET /stock/912 200 21ms
+2026-07-02T14:31:48Z WARN  checkout        request_id=r-8f18 POST /payment/authorize 200 402ms upstream=payments-service slow_upstream
+2026-07-02T14:31:59Z INFO  web-frontend     request_id=w-4440 GET /home 200 13ms
+2026-07-02T14:32:09Z ERROR checkout        request_id=r-8f1a POST /payment/authorize 500 3004ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:32:11Z ERROR checkout        request_id=r-8f1b POST /payment/authorize 500 3002ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:32:19Z INFO  search-service   request_id=s-1ac0 GET /search?q=scarf 200 80ms
+2026-07-02T14:32:26Z ERROR checkout        request_id=r-8f1e POST /payment/authorize 500 3005ms upstream=payments-service error="upstream timeout calling payments-service: connection pool exhausted"
+2026-07-02T14:32:33Z INFO  cdn-edge         request_id=c-7790 GET /assets/app.js 304 2ms
+2026-07-02T14:32:41Z INFO  search-service  request_id=s-1ab0 GET /search?q=hat 200 81ms
+2026-07-02T14:32:52Z ERROR checkout        request_id=r-8f22 POST /payment/authorize 500 3003ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:33:10Z ERROR checkout        request_id=r-8f25 POST /payment/authorize 500 3006ms upstream=payments-service error="upstream timeout calling payments-service: connection pool exhausted"
+2026-07-02T14:33:20Z INFO  api-gateway      request_id=g-5110 GET /healthz 200 2ms
+2026-07-02T14:33:33Z ERROR checkout        request_id=r-8f29 POST /payment/authorize 500 3001ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:33:45Z WARN  analytics-ingest request_id=an-9044 POST /ingest 200 91ms gc_pause=205ms
+2026-07-02T14:33:58Z ERROR checkout        request_id=r-8f2d POST /payment/authorize 500 3004ms upstream=payments-service error="upstream timeout calling payments-service: connection pool exhausted"
+2026-07-02T14:34:12Z INFO  web-frontend    request_id=w-4460 GET /product/912 200 15ms
+2026-07-02T14:34:29Z ERROR checkout        request_id=r-8f31 POST /payment/authorize 500 3002ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:34:40Z INFO  notifications-service request_id=n-6660 POST /notify/push 200 38ms
+2026-07-02T14:34:58Z INFO  pricing-service  request_id=p-8850 GET /price/912 200 26ms
+2026-07-02T14:35:05Z ERROR checkout        request_id=r-8f35 POST /payment/authorize 500 3005ms upstream=payments-service error="upstream timeout calling payments-service: connection pool exhausted"
+2026-07-02T14:35:29Z INFO  cron-runner      request_id=cr-0140 tick job=session-sweep 200 7ms
+2026-07-02T14:35:44Z ERROR checkout        request_id=r-8f3a POST /payment/authorize 500 3003ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:36:02Z INFO  recommendations  request_id=re-3360 GET /reco/home 200 59ms
+2026-07-02T14:36:20Z ERROR checkout        request_id=r-8f3f POST /payment/authorize 500 3007ms upstream=payments-service error="upstream timeout calling payments-service: connection pool exhausted"
+2026-07-02T14:36:48Z INFO  search-indexer   request_id=si-2020 job=incremental-index docs=980 200 300ms
+2026-07-02T14:37:01Z ERROR checkout        request_id=r-8f44 POST /payment/authorize 500 3002ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:37:30Z INFO  cdn-edge         request_id=c-77a0 GET /assets/main.css 304 3ms
+2026-07-02T14:37:55Z INFO  inventory-service request_id=i-2070 GET /stock/415 200 19ms
+2026-07-02T14:38:19Z ERROR checkout        request_id=r-8f4a POST /payment/authorize 500 3004ms upstream=payments-service error="upstream timeout calling payments-service"
+2026-07-02T14:38:44Z INFO  user-profile     request_id=u-3340 GET /profile/me 200 31ms
+2026-07-02T14:39:10Z WARN  web-frontend     request_id=w-4470 GET /product/415 200 905ms slow_render
+2026-07-02T14:39:33Z INFO  auth-service     request_id=au-5540 POST /token/refresh 200 21ms
+2026-07-02T14:39:47Z ERROR checkout        request_id=r-8f50 POST /payment/authorize 500 3006ms upstream=payments-service error="upstream timeout calling payments-service: connection pool exhausted"
+2026-07-02T14:39:58Z INFO  cdn-edge         request_id=c-77b0 GET /assets/app.js 304 2ms

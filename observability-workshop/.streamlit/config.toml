@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------
+# "Midnight Ops" — the incident console theme for Trace the Incident.
+#
+# A calm dark palette that reads like a real observability tool: a deep navy
+# canvas, slate panels, a signal-blue accent for interactive bits, and (via
+# assets/style.css) a red reserved strictly for the "something is on fire" cues.
+# Streamlit reads this file automatically on startup — no code needed.
+# ---------------------------------------------------------------------------
+[theme]
+base = "dark"
+
+# Accent used for widgets, links, sliders, focus rings.
+primaryColor = "#4c9dff"          # signal blue
+
+# The two surface layers: page canvas + cards/inputs/sidebar.
+backgroundColor = "#0b0f17"       # deep console navy
+secondaryBackgroundColor = "#141b26"  # slate panel
+
+# High-contrast body text for readability on the dark canvas.
+textColor = "#e6edf3"
+
+# Clean, neutral system sans — fits a dashboard better than a serif.
+font = "sans serif"
