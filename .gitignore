@@ -1,36 +1,31 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Python .gitignore
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Byte-compiled / optimized / cache files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# testing
-/coverage
+# Virtual environments
+.venv/
+venv/
+env/
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
+# Environment files (keep .env.example tracked)
 .env
+.env.local
 
-# vercel
-.vercel
+# Streamlit secrets
+.streamlit/secrets.toml
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Test / type-checker / linter caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Packaging / build artifacts
+*.egg-info/
+dist/
+build/
+
+# OS files
+.DS_Store
