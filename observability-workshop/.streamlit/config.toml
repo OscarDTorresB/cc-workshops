@@ -21,3 +21,6 @@ textColor = "#e6edf3"
 
 # Clean, neutral system sans — fits a dashboard better than a serif.
 font = "sans serif"
+
+[server]
+runOnSave = true

@@ -20,6 +20,7 @@ ANTHROPIC_API_KEY environment variable.
 """
 
 import json
+import uuid
 
 import streamlit as st
 
@@ -28,7 +29,14 @@ from constants import AGENT_NAME, MODEL, SYSTEM_PROMPT, TOOLS
 from observatory import tools
 
 # Reads ANTHROPIC_API_KEY from the environment.
-client = anthropic.Anthropic()
+client = anthropic
+
+
+def _text(content) -> str:
+    """Join the text blocks of an event's content list."""
+    return "".join(
+        getattr(b, "text", "") for b in (content or []) if getattr(b, "type", None) == "text"
+    )
 
 
 # ── 1. Agent ────────────────────────────────────────────────────────────────
