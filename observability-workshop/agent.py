@@ -29,7 +29,7 @@ from constants import AGENT_NAME, MODEL, SYSTEM_PROMPT, TOOLS
 from observatory import tools
 
 # Reads ANTHROPIC_API_KEY from the environment.
-client = anthropic
+client = anthropic.Anthropic()
 
 
 def _text(content) -> str:
